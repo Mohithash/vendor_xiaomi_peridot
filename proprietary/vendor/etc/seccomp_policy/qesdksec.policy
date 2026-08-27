@@ -71,3 +71,13 @@ getgid: 1
 
 #added for set thread pool
 setpriority: 1
+
+# added for Android 17 bionic - parity with qesdk.policy, which runs clean on this image
+lseek: 1
+exit: 1
+exit_group: 1
+restart_syscall: 1
+rt_sigreturn: 1
+getrlimit: 1
+rt_tgsigqueueinfo: 1
+tgkill: 1
