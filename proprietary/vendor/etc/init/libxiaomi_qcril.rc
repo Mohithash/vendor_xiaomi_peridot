@@ -8,17 +8,7 @@ on post-fs-data
 on early-boot
     #exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.xiaomi.modem.sh
 
-service xiaomi_modem_sh /vendor/bin/init.xiaomi.modem.sh
-    class late_start
-    user root
-    group root system radio
-    oneshot
 
-service xiaomi_modem_cust_sh /vendor/bin/init.xiaomi.modem.cust.sh
-    class late_start
-    user root
-    group root system radio
-    oneshot
 
 service diag_mdlog_auto_start /vendor/bin/diag_mdlog -q 0x2006 -j 1 -u -c -i -n 50
     class late_start
