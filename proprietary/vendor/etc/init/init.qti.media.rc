@@ -32,18 +32,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #===============================================================================
-service qti-media /vendor/bin/init.qti.media.sh
-    class main
-    user media
-    group media
-    disabled
-    oneshot
 
 on early-init
     setprop vendor.media.system.build_codename ${ro.build.version.release_or_codename}
 
-on late-fs
-    start qti-media
 
 on post-fs-data
     setprop ro.media.xml_variant.codecs ${vendor.media.target_variant}
